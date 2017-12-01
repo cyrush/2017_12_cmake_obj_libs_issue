@@ -1,5 +1,8 @@
 cmake_minimum_required(VERSION 3.8)
 
+set(BUILD_SHARED_LIBS OFF)
+include(blt/SetupBLT.cmake)
+
 project(example)
 
 add_library(c_stuff

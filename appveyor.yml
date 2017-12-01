@@ -9,6 +9,8 @@ init:
 install:
 
 before_build:
+  # init submodules
+  - git submodule update --init --recursive
   - echo Running cmake ...
   - cmake -H. -Bbuild -G "%CMAKE_GENERATOR%" 
 
