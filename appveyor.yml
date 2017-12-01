@@ -1,0 +1,18 @@
+environment:
+  matrix:
+  - CMAKE_GENERATOR: "Visual Studio 14 2015"
+    CONFIG: Release
+init:
+  # line endings magic
+  - git config --global core.autocrlf input
+
+install:
+
+before_build:
+  - echo Running cmake ...
+  - cmake -H. -Bbuild -G "%CMAKE_GENERATOR%" 
+
+build_script:
+  #build
+  - echo Building ...
+  - cmake --build build --config %CONFIG%
