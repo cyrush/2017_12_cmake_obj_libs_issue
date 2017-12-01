@@ -9,6 +9,8 @@ init:
 install:
 
 before_build:
+  # remove some noisy warnings from Xamarin
+  - del "C:\Program Files (x86)\MSBuild\14.0\Microsoft.Common.targets\ImportAfter\Xamarin.Common.targets"
   # init submodules
   - git submodule update --init --recursive
   - echo Running cmake ...
